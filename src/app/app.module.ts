@@ -1,5 +1,4 @@
 import { ContainerModule } from './container/container.module';
-import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -24,18 +23,14 @@ export function tokenGetter() {
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
     LoginComponent,
     HomeComponent,
     ProductComponent,
-=======
->>>>>>> master
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-<<<<<<< HEAD
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
@@ -60,12 +55,6 @@ export function tokenGetter() {
     multi: true,
   },AuthGuard],
   
-=======
-    ContainerModule
-  ],
- 
-  providers: [],
->>>>>>> master
   bootstrap: [AppComponent]
 })
 export class AppModule { }
