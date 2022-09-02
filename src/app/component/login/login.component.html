@@ -1,0 +1,11 @@
+<div>
+    Name:
+    <input [(ngModel)]="loginCred.username" placeholder="Name">
+  </div>
+  <div>
+    Password:
+    <input [(ngModel)]="loginCred.password" placeholder="Password" type="password">
+  </div>
+  
+  <button (click)="login(loginCred)">Login</button>
+  
