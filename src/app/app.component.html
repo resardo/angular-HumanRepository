@@ -1,10 +1,10 @@
-<<<<<<< HEAD
- <div class="header"> -->
+ <!-- <div class="header"> -->
     
   
-   <a routerLink="" class="menulink">Home</a>
+   <!-- <a routerLink="" class="menulink">Home</a>
    <a routerLink="/product" class="menulink">Product</a>
-   <a routerLink="/login" style="float: right;" class="menulink">Login</a>
+   <div><a class="nav-link" style="float: right;" *ngIf="_service.IsLogged()" (click)="_service.Logout()">Logout</a></div>
+   <a routerLink="/login" style="float: right;" *ngIf="!_service.IsLogged()" class="menulink">Login</a>
    
   </div>
   <br>
@@ -12,7 +12,35 @@
   <div class="card-box">
   <router-outlet></router-outlet>
   </div>
-  </div>
-=======
-<router-outlet></router-outlet>
->>>>>>> master
+  </div> --> 
+
+
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid ">
+      <a class="navbar-brand" href="#">Human Resources</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarNav">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a routerLink="" class="nav-link active" aria-current="page">Home</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="/product" class="nav-link" >Product</a>
+          </li>
+          <li class="nav-item ">
+            <a routerLink="/login"  class="nav-link " *ngIf="!_service.IsLogged()">Login</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link " *ngIf="_service.IsLogged()" (click)="_service.Logout()">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="card-box">
+    <router-outlet></router-outlet>
+    </div>
+    </div>

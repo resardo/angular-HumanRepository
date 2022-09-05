@@ -15,6 +15,7 @@ import { HomeComponent } from './component/home/home.component';
 import { ProductComponent } from './component/product/product.component';
 import { AuthGuard } from './guards/auth-guards.service';
 import { config } from 'rxjs';
+import { RoleGuard } from './guards/role.guard';
 
 
 export function tokenGetter() { 
@@ -36,7 +37,7 @@ export function tokenGetter() {
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'product', component: ProductComponent ,canActivate:[AuthGuard]},
+    { path: 'product', component: ProductComponent ,canActivate:[RoleGuard],data:{role: 'Admin',},},
   ]),
   JwtModule.forRoot({
 
@@ -53,7 +54,7 @@ export function tokenGetter() {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true,
-  },AuthGuard],
+  },AuthGuard,RoleGuard],
   
   bootstrap: [AppComponent]
 })
